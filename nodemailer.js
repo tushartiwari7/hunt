@@ -52,7 +52,7 @@ I'm actively seeking Senior Frontend opportunities where I can continue to make 
 <p>You can view my portfolio <a href="https://tushar.vercel.app">tushar.vercel.app</a> and GitHub projects <a href="https://github.com/tushartiwari7">here</a>.</p>
 <p>Currently, I am <b>serving notice period</b> and can <b>join within 15 days</b> of receiving an offer. A little help from your side can significantly help my career.</p>
 <p>PS: I have attached my <b><a href="https://drive.google.com/file/d/1AQ2bZ_yUheXoKPHwcAgyQIZxWAO_NwMT/view?usp=sharing">Resume</a></b> & <b><a href="https://www.linkedin.com/in/tushartiwari7/">Linkedin Profile</a></b> ${
-      Link !== undefined ? `& <b><a href=${Link}>Opening</a> </b>` : ""
+      Link !== undefined ? `& <b><a href=${Link}>Job Opening</a> </b>` : ""
     } for you to take a look at. If you find me suitable, please help me with an Interview Opportunity at ${Company}.</p>
 <p> 
 <p>
@@ -71,10 +71,13 @@ Regards,<br>
   }
 };
 
+const ONE_MINUTE = 90000; // 90000ms
+const TEN_SEC = 10000; // 90000ms
+
 const sendEmailsSynchronously = async () => {
   for (const row of data) {
     await sendEmail(row);
-    await new Promise((resolve) => setTimeout(resolve, Math.random() * 90000)); // Pause for 1 minute (adjust the duration as needed)
+    await new Promise((resolve) => setTimeout(resolve, Math.random() * TEN_SEC)); // Pause for 1 minute (adjust the duration as needed)
   }
   console.log("Done Sending mails");
   exit();
