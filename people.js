@@ -2,7 +2,8 @@ const peoples = require("./peoples.json");
 const xlsx = require("xlsx");
 
 const NAME_COLUMN_INDEX = 0;
-const EXCEL_FIRST_ROW = 10;
+const EMAIL_COLUMN_INDEX = 2;
+const EXCEL_FIRST_ROW = 2;
 // Load your Excel file
 const workbook = xlsx.readFile("./referrals.xlsx"); // Path for the sheet in your local folder
 const sheetName = "references"; // Change to the name of your sheet
@@ -16,10 +17,14 @@ const columnToUpdate = NAME_COLUMN_INDEX; // Column index (e.g., 2 for the third
 let index = EXCEL_FIRST_ROW;
 peoples.forEach((user) => {
   if (user && user.name) {
-    if (jsonData[index]) jsonData[index][columnToUpdate] = user.name;
+    if (jsonData[index]) {
+      jsonData[index][columnToUpdate] = user.name;
+      jsonData[index][EMAIL_COLUMN_INDEX] = user.email;
+    }
     else {
       jsonData[index] = [null,null,null,null,null,null];
       jsonData[index][columnToUpdate] = user.name;
+      jsonData[index][EMAIL_COLUMN_INDEX] = user.email;
     }
     index++;
   }

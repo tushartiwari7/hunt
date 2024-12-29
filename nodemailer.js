@@ -77,7 +77,7 @@ const TEN_SEC = 10000; // 90000ms
 const sendEmailsSynchronously = async () => {
   for (const row of data) {
     await sendEmail(row);
-    await new Promise((resolve) => setTimeout(resolve, Math.random() * TEN_SEC)); // Pause for 1 minute (adjust the duration as needed)
+    await new Promise((resolve) => setTimeout(resolve, Math.random()  * TEN_SEC)); // Pause for 1 minute (adjust the duration as needed)
   }
   console.log("Done Sending mails");
   exit();
