@@ -50,7 +50,7 @@ const sendEmail = async (row) => {
 I'm actively seeking Senior Frontend opportunities where I can continue to make a meaningful impact. I'd love to discuss how my skills and experiences align with ${Company}.
 </p>
 <p>You can view my portfolio <a href="https://tushar.vercel.app">tushar.vercel.app</a> and GitHub projects <a href="https://github.com/tushartiwari7">here</a>.</p>
-<p>Currently, I am <b>serving notice period</b> and can <b>join within 15 days</b> of receiving an offer. A little help from your side can significantly help my career.</p>
+<p>Currently, I am <b>serving notice period</b> with an offer from <b>Flipkart Group</b>. A little help from your side can significantly help my career.</p>
 <p>PS: I have attached my <b><a href="https://drive.google.com/file/d/1AQ2bZ_yUheXoKPHwcAgyQIZxWAO_NwMT/view?usp=sharing">Resume</a></b> & <b><a href="https://www.linkedin.com/in/tushartiwari7/">Linkedin Profile</a></b> ${
       Link !== undefined ? `& <b><a href=${Link}>Job Opening</a> </b>` : ""
     } for you to take a look at. If you find me suitable, please help me with an Interview Opportunity at ${Company}.</p>
