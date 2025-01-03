@@ -3,8 +3,7 @@ const xlsx = require("xlsx");
 
 const NAME_COLUMN_INDEX = 0;
 const EMAIL_COLUMN_INDEX = 2;
-
-const EXCEL_FIRST_ROW = 2;
+const EXCEL_FIRST_ROW = 1;
 // Load your Excel file
 const workbook = xlsx.readFile("./referrals.xlsx"); // Path for the sheet in your local folder
 const sheetName = "references"; // Change to the name of your sheet

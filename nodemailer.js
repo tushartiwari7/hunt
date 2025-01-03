@@ -1,6 +1,7 @@
 const fs = require("fs");
 const xlsx = require("xlsx");
 const nodemailer = require("nodemailer");
+const posting = require("./posting.json");
 const { exit } = require("process");
 // download the above packages
 
@@ -26,16 +27,17 @@ const newTransporter = () => {
 };
 const transporter = newTransporter();
 const sendEmail = async (row) => {
-  const { Name, Company, Email, Role, Link } = row; // Adjust column names accordingly
+  const { Name, Email } = row; // Adjust column names accordingly
+  const {role, company, link} = posting;
   const nameParts = Name.split(" ");
   const name = nameParts[0];
   const mailOptions = {
     from: "Tushar Tiwari <tushar.frontend@gmail.com>",
     to: Email,
-    subject: `Request for an Interview Opportunity - ${Role} at ${Company}`,
+    subject: `Request for an Interview Opportunity - ${role} at ${company}`,
     html: `
 <p>Greetings ${name},</p>
-<p>I'm Tushar Tiwari, a Software Developer at Grid. I got to know through linkedin that <b>${Company}</b> is looking for a <b>${Role}</b> profile therefore, I have mailed you to tell you about myself. <br/> I have: 
+<p>I'm Tushar Tiwari, a Software Developer at Grid. I got to know through linkedin that <b>${company}</b> is looking for a <b>${role}</b> profile therefore, I have mailed you to tell you about myself. <br/> I have: 
 <ul>
 <li><b>close to 3 Years</b> of hands-on experience in <b>Frontend Domain</b></li>
 <li>Worked extensively in <b>React, Node, Redux, Zustand, SCSS, TypeScript and IndexedDB.</b></li>
@@ -47,13 +49,13 @@ const sendEmail = async (row) => {
 </ul>
 <p>Beyond my professional role, I actively <b>contribute to the developer community</b> through blog posts that have engaged over <b>20,000 readers</b> and by building open-source projects like Elevate UI, a CSS component library.
 <br/>
-I'm actively seeking Senior Frontend opportunities where I can continue to make a meaningful impact. I'd love to discuss how my skills and experiences align with ${Company}.
+I'm actively seeking Senior Frontend opportunities where I can continue to make a meaningful impact. I'd love to discuss how my skills and experiences align with ${company}.
 </p>
 <p>You can view my portfolio <a href="https://tushar.vercel.app">tushar.vercel.app</a> and GitHub projects <a href="https://github.com/tushartiwari7">here</a>.</p>
 <p>Currently, I am <b>serving notice period</b> and can <b>join within 15 days</b> of receiving an offer. A little help from your side can significantly help my career.</p>
 <p>PS: I have attached my <b><a href="https://drive.google.com/file/d/1AQ2bZ_yUheXoKPHwcAgyQIZxWAO_NwMT/view?usp=sharing">Resume</a></b> & <b><a href="https://www.linkedin.com/in/tushartiwari7/">Linkedin Profile</a></b> ${
-      Link !== undefined ? `& <b><a href=${Link}>Job Opening</a> </b>` : ""
-    } for you to take a look at. If you find me suitable, please help me with an Interview Opportunity at ${Company}.</p>
+      link !== undefined ? `& <b><a href=${link}>Job Opening</a> </b>` : ""
+    } for you to take a look at. If you find me suitable, please help me with an Interview Opportunity at ${company}.</p>
 <p> 
 <p>
 Thanking You<br>
