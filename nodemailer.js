@@ -85,7 +85,7 @@ const sendEmailsSynchronously = async () => {
   exit();
 };
 
-// I hope you’re doing well! I noticed you’re working at Amazon now and wanted to reach out regarding the SDE position. I have 3+ years of experience with React, Node, Redux, Zustand, SCSS, TypeScript, and IndexedDB. I’ve worked in cross-functional teams, collaborating through the entire SDLC to deliver impactful, high-quality solutions, and I’m passionate about building scalable applications.
-
 // Call the function to send emails
 sendEmailsSynchronously();
+
+// I hope you’re doing well! I noticed you’re working at Amazon now and wanted to reach out regarding the SDE position. I have 3+ years of experience with React, Node, Redux, Zustand, SCSS, TypeScript, and IndexedDB. I’ve worked in cross-functional teams, collaborating through the entire SDLC to deliver impactful, high-quality solutions, and I’m passionate about building scalable applications.
